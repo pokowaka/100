@@ -1,0 +1,12 @@
+{
+  "name": "ghostseed",
+  "description": "A first version of HTML5 based GhostSeed",
+  "repository": "git@codebasehq.com:ctenophore/ghost-seed-online/gso.git",
+  "devDependencies": {
+    "phantomjs" : "~1.9",
+    "karma" : "~0.10",
+    "karma-junit-reporter" : "~0.1",
+    "karma-jasmine" : "~0.1",
+    "karma-ng-scenario" : "~0.1"
+  }
+}

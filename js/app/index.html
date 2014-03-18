@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="wordApp">
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/word.css">
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/log4javascript/1.4.3/log4javascript.js"></script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script> -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/jquery/jquery-1.10.2.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="lib/underscore-min.js"></script>
+
+    <script type="text/javascript">
+      function initialize() {
+        var log = new log4javascript.getDefaultLogger();
+        log.addAppender(new log4javascript.BrowserConsoleAppender());
+      }
+
+    </script>
+  </head>
+  <body ng-controller="wordCtrl">
+  <h3>Concept to describe</h3>
+  <h1>{{concept}}</h1>
+
+  <h3>Your description:</h3>
+  <div id='description'>
+    <ul class="next">
+    <li  ng-repeat="word in description track by $index">
+    {{word}}
+    </li>
+    </ul>
+  </div>
+  <button ng-click='removeLastWord()'>Delete Last</button>
+  </br>
+  <h3>Your words</h3> 
+  <ul class="words">
+    <li  ng-repeat="word in words">
+    <button id='{{word}}' ng-click="addWord(word)">{{word}}</button>
+    </li>
+  </ul>
+
+  <hr/>
+  <br/>
+  <h3>Click when you are done</h3>
+  <button ng-click='share()'>Share</button>
+  </body>
+</html>
+

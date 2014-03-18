@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="guessApp">
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/word.css">
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/log4javascript/1.4.3/log4javascript.js"></script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script> -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/jquery/jquery-1.10.2.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <script type="text/javascript">
+      function initialize() {
+        var log = new log4javascript.getDefaultLogger();
+        log.addAppender(new log4javascript.BrowserConsoleAppender());
+      }
+
+    </script>
+  </head>
+  <body ng-controller="guessCtrl">
+  <h3>What does this mean:</h3>
+  <div id='description'>
+    <ul class="next">
+    <li  ng-repeat="word in description track by $index">
+    {{word}}
+    </li>
+    </ul>
+  </div>
+  <h3>What we are looking for: {{revealed}}</h3>
+  <button ng-click="reveal()">Reveal</button> 
+  </body>
+</html>
+
